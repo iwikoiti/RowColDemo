@@ -20,6 +20,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ModifierLocalBeyondBoundsLayout
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -43,18 +44,31 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun MainScreen(modifier: Modifier = Modifier){
-    Row(horizontalArrangement = Arrangement.End,
-        modifier = modifier.size(width = 400.dp, height = 200.dp)){
-        TextCell("1")
-        TextCell("2")
-        TextCell("3")
+
+    Column {
+        Row(horizontalArrangement = Arrangement.SpaceEvenly,
+            modifier = modifier.width(1000.dp)){
+            TextCell("1")
+            TextCell("2")
+            TextCell("3")
+        }
+        Spacer(modifier = Modifier.height(16.dp))
+        Row(horizontalArrangement = Arrangement.SpaceBetween,
+            modifier = modifier.width(1000.dp)){
+            TextCell("4")
+            TextCell("5")
+            TextCell("6")
+        }
+        Spacer(modifier = Modifier.height(16.dp))
+        Row(horizontalArrangement = Arrangement.SpaceAround,
+            modifier = modifier.width(1000.dp)){
+            TextCell("7")
+            TextCell("8")
+            TextCell("9")
+        }
     }
-    Column(verticalArrangement = Arrangement.Bottom,
-        modifier = modifier.height(400.dp)){
-        TextCell("4")
-        TextCell("5")
-        TextCell("6")
-    }
+
+
 }
 
 @Preview(showBackground = true)
