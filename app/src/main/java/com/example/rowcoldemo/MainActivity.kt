@@ -5,9 +5,12 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -40,11 +43,17 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun MainScreen(modifier: Modifier = Modifier){
-    Column(horizontalAlignment = Alignment.End,
-        modifier = modifier.width(250.dp)){
+    Row(horizontalArrangement = Arrangement.End,
+        modifier = modifier.size(width = 400.dp, height = 200.dp)){
         TextCell("1")
         TextCell("2")
         TextCell("3")
+    }
+    Column(verticalArrangement = Arrangement.Bottom,
+        modifier = modifier.height(400.dp)){
+        TextCell("4")
+        TextCell("5")
+        TextCell("6")
     }
 }
 
