@@ -47,58 +47,10 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun MainScreen(modifier: Modifier = Modifier){
-    Column{
-        Row(modifier = modifier.height(300.dp)){
-            TextCell("1", Modifier.align(Alignment.Top))
-            TextCell("2", Modifier.align(Alignment.CenterVertically))
-            TextCell("3", Modifier.align(Alignment.Bottom))
-        }
-        Spacer(Modifier.padding(16.dp))
-        Row{
-            Text(
-                text = "Large Text",
-                Modifier.alignByBaseline(),
-                fontSize = 40.sp,
-                fontWeight = FontWeight.Bold
-            )
-            Text(
-                text = "Small Text",
-                Modifier.alignByBaseline(),
-                fontSize = 32.sp,
-                fontWeight = FontWeight.Bold
-            )
-        }
-        Spacer(Modifier.padding(16.dp))
-        Row{
-            Text(
-                text = "Large Text\n\nMore Text",
-                Modifier.alignBy(LastBaseline),
-                fontSize = 40.sp,
-                fontWeight = FontWeight.Bold
-            )
-            Text(
-                text = "Small Text",
-                Modifier.alignByBaseline(),
-                fontSize = 32.sp,
-                fontWeight = FontWeight.Bold
-            )
-        }
-        Spacer(Modifier.padding(16.dp))
-        Row{
-            Text(
-                text = "Large Text\n\nMore Text",
-                Modifier.alignBy(FirstBaseline),
-                fontSize = 40.sp,
-                fontWeight = FontWeight.Bold
-            )
-            Text(
-                text = "Small Text",
-                modifier = Modifier.paddingFrom(
-                    alignmentLine = FirstBaseline, before = 80.dp, after = 0.dp),
-                fontSize = 32.sp,
-                fontWeight = FontWeight.Bold
-            )
-        }
+    Row{
+        TextCell("1", Modifier.weight(weight = 0.2f, fill = true))
+        TextCell("2", Modifier.weight(weight = 0.4f, fill = true))
+        TextCell("3", Modifier.weight(weight = 0.3f, fill = true))
     }
 }
 
